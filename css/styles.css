@@ -150,7 +150,9 @@ a   { text-decoration: none; color: inherit; }
   font-family: var(--ff-script);
   font-size: 1.8rem;
   color: var(--clr-white);
+  transition: color var(--t);
 }
+#navbar.scrolled .nav-logo { color: var(--clr-pink-text); }
 
 .nav-links { display: flex; gap: 2rem; }
 
