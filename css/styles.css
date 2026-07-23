@@ -4,14 +4,14 @@
 :root {
   /* Paleta principal — inspirada en el vestido */
   --clr-white:       #FFFDFB;   /* blanco perla */
-  --clr-pink:        #FFE7DC;   /* rosa empolvado claro */
+  --clr-pink:        #FFD2DB;   /* rosa empolvado claro */
   --clr-pink-hover:  #EFC3CD;   /* rosa champagne */
   --clr-pink-text:   #8F6C73;   /* texto elegante */
-  --clr-card:        #FFF4F6;   /* tarjetas */
   --clr-gold:        #C9A227;   /* dorado reservado — solo para el swatch de vestuario */
+  --clr-btn-hover:   #ECB3BE;   /* hover de botones outline */
 
   /* Mismos colores en RGB — para poder usarlos con alpha vía rgba(var(--x-rgb), N) */
-  --clr-pink-rgb:       255, 231, 220;
+  --clr-pink-rgb:       255, 210, 219;
   --clr-pink-hover-rgb: 239, 195, 205;
   --clr-pink-text-rgb:  143, 108, 115;
 
@@ -858,8 +858,8 @@ a   { text-decoration: none; color: inherit; }
 }
 .btn-calendar:hover,
 .btn-share:hover {
-  background: var(--clr-pink-text);
-  color: #fff;
+  background: var(--clr-btn-hover);
+  color: var(--clr-pink-text);
   transform: translateY(-2px);
 }
 .btn-calendar svg,
@@ -907,22 +907,6 @@ a   { text-decoration: none; color: inherit; }
   object-fit: contain;
   border-radius: 10px;
   display: block;
-}
-
-.vive-hashtag {
-  font-family: var(--ff-serif);
-  font-size: 1.1rem;
-  color: rgba(var(--clr-pink-text-rgb), .85);
-  line-height: 1.7;
-}
-
-.vive-hashtag strong {
-  display: block;
-  font-family: var(--ff-sans);
-  font-size: 1rem;
-  font-weight: 600;
-  letter-spacing: .15em;
-  color: var(--clr-pink-text);
 }
 
 /* ============================================================
@@ -977,6 +961,11 @@ a   { text-decoration: none; color: inherit; }
   text-align: center;
 }
 
+/* #padres y #detalles son dos secciones blancas seguidas: sin esto,
+   sus paddings verticales se suman y dejan un hueco enorme entre ambas */
+#padres     { padding-bottom: 1.5rem; }
+#detalles   { padding-top: 1.5rem; }
+
 .padres-intro {
   font-family: var(--ff-script);
   font-size: 2.4rem;
@@ -1002,67 +991,6 @@ a   { text-decoration: none; color: inherit; }
   font-size: 1.3rem;
   color: var(--clr-gray-dark);
   line-height: 1.65;
-}
-
-/* ============================================================
-   CUENTA REGRESIVA — sección círculos
-   ============================================================ */
-#cuenta-regresiva { text-align: center; }
-
-.cr-fecha {
-  font-family: var(--ff-script);
-  font-size: 3rem;
-  color: var(--clr-pink-text);
-  margin-bottom: 2.8rem;
-}
-
-.cr-circles {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 1.8rem;
-  flex-wrap: wrap;
-}
-
-.cr-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: .9rem;
-}
-
-.cr-circle {
-  width: 110px;
-  height: 110px;
-  border-radius: 50%;
-  border: 1.5px solid rgba(var(--clr-pink-text-rgb), .45);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.cr-circle span {
-  font-family: var(--ff-serif);
-  font-size: 2.4rem;
-  font-weight: 300;
-  color: var(--clr-pink-text);
-  line-height: 1;
-  min-width: 2ch;
-  text-align: center;
-}
-
-.cr-label {
-  font-family: var(--ff-sans);
-  font-size: .72rem;
-  font-weight: 500;
-  letter-spacing: .22em;
-  color: rgba(var(--clr-pink-text-rgb), .75);
-}
-
-@media (max-width: 480px) {
-  .cr-circle { width: 80px; height: 80px; }
-  .cr-circle span { font-size: 1.8rem; }
-  .cr-circles { gap: 1rem; }
 }
 
 /* ============================================================
@@ -1135,8 +1063,8 @@ a   { text-decoration: none; color: inherit; }
   transition: all var(--t);
 }
 .btn-outline-pill:hover {
-  background: var(--clr-pink-text);
-  color: #fff;
+  background: var(--clr-btn-hover);
+  color: var(--clr-pink-text);
 }
 
 /* ============================================================
@@ -1204,8 +1132,8 @@ a   { text-decoration: none; color: inherit; }
   text-decoration: none;
 }
 .btn-extra-card:hover {
-  background: var(--clr-pink-text);
-  color: #fff;
+  background: var(--clr-btn-hover);
+  color: var(--clr-pink-text);
 }
 
 /* ============================================================
@@ -1227,7 +1155,7 @@ a   { text-decoration: none; color: inherit; }
 .xv-modal.active { opacity: 1; visibility: visible; }
 
 .xv-modal-card {
-  background: var(--clr-card);
+  background: var(--clr-white);
   border-radius: 20px;
   padding: 2.5rem 2rem 2rem;
   max-width: 340px;

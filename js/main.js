@@ -157,11 +157,6 @@ const cdHours    = document.getElementById('cd-hours');
 const cdMinutes  = document.getElementById('cd-minutes');
 const cdSeconds  = document.getElementById('cd-seconds');
 
-const crDays     = document.getElementById('cr-days');
-const crHours    = document.getElementById('cr-hours');
-const crMinutes  = document.getElementById('cr-minutes');
-const crSeconds  = document.getElementById('cr-seconds');
-
 function pad(n) { return String(n).padStart(2, '0'); }
 
 function animateFlip(el, newVal) {
@@ -191,11 +186,6 @@ function tick() {
   animateFlip(cdHours,   hours);
   animateFlip(cdMinutes, minutes);
   animateFlip(cdSeconds, seconds);
-
-  if (crDays)    crDays.textContent    = days;
-  if (crHours)   crHours.textContent   = hours;
-  if (crMinutes) crMinutes.textContent = minutes;
-  if (crSeconds) crSeconds.textContent = seconds;
 }
 tick();
 setInterval(tick, 1000);
